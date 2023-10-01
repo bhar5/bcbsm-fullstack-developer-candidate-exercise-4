@@ -25,7 +25,7 @@ export class UploadComponent {
         formData.append('files', this.selectedFiles[i]);
       }
 
-      this.http.post<any>('/api/upload', formData).subscribe(
+      this.http.post<any>('/file/upload', formData).subscribe(
         (response) => {
           this.successMessage = 'Files uploaded successfully!';
           this.errorMessage = '';

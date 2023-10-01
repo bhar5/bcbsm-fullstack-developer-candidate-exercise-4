@@ -20,23 +20,24 @@ export class LoginComponent {
       password: this.password,
     };
 
-    // const isAuthenticated = true; 
-    // if (isAuthenticated) {
-    //   this.router.navigate(['/upload']);
-    // } else {
-    //   this.loginMessage = 'Login failed. Please check your credentials.';
-    // }
+    const isAuthenticated = true; 
+    if (isAuthenticated) {
+      this.router.navigate(['/file/upload']);
+    } else {
+      this.loginMessage = 'Login failed. Please check your credentials.';
+    }
 
-    this.http.post<any>('/api/login', loginData).subscribe(
-      (response) => {
-        // Handle successful login response here
-        this.router.navigate(['/upload']);
-        this.loginMessage = 'Login successful!';
-      },
-      (error) => {
-        // Handle login error here
-        this.loginMessage = 'Login failed. Please check your credentials.';
-      }
-    );
+    // this.http.post<any>('http://localhost:8080/api/login', loginData).subscribe(
+    //   (response) => {
+    //     // Handle successful login response here
+    //     this.router.navigate(['/upload']); 
+    //     this.loginMessage = 'Login successful!';
+    //   },
+    //   (error) => {
+    //     // Handle login error here
+    //     this.loginMessage = 'Login failed. Please check your credentials.';
+    //   }
+    // );
+
   }
 }
