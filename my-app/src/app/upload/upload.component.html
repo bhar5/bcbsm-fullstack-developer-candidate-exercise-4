@@ -1,0 +1,7 @@
+<div class="upload-form">
+    <h2>Upload Files</h2>
+    <input class="file-input" type="file" (change)="onFileSelected($event)">
+    <button class="upload-button" (click)="uploadFiles()">Upload</button>
+    <p class="success-message">{{ successMessage }}</p>
+    <p class="error-message">{{ errorMessage }}</p>
+  </div>
